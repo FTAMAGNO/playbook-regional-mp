@@ -204,17 +204,32 @@ tbody tr.hidden { display: none; }
 .ov-val { font-weight: 700; }
 
 /* ── GLOSARIO ── */
-.glos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
-.glos-card { background: var(--card); border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border-left: 4px solid var(--yellow); transition: transform 0.15s; }
-.glos-card:hover { transform: translateY(-2px); }
-.glos-card.blue { border-left-color: var(--blue); }
-.glos-card.green { border-left-color: var(--green); }
-.glos-card.orange { border-left-color: var(--orange); }
-.glos-card.purple { border-left-color: var(--purple); }
-.glos-card.red { border-left-color: var(--red); }
-.glos-term { font-weight: 700; font-size: 0.9rem; margin-bottom: 5px; }
-.glos-def { font-size: 0.8rem; color: var(--muted); line-height: 1.55; }
-.glos-tag { display: inline-block; font-size: 0.65rem; font-weight: 700; padding: 2px 7px; border-radius: 10px; background: #f3f4f6; color: #555; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px; }
+.glos-list { display: flex; flex-direction: column; gap: 0; }
+.glos-item {
+  display: flex; gap: 0; align-items: stretch;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.12s;
+}
+.glos-item:last-child { border-bottom: none; }
+.glos-item:hover { background: #fafbff; }
+.glos-accent { width: 4px; flex-shrink: 0; border-radius: 0; }
+.glos-accent.yellow { background: var(--yellow); }
+.glos-accent.blue   { background: var(--blue); }
+.glos-accent.green  { background: var(--green); }
+.glos-accent.orange { background: var(--orange); }
+.glos-accent.purple { background: var(--purple); }
+.glos-accent.red    { background: var(--red); }
+.glos-body { padding: 14px 20px; flex: 1; }
+.glos-term { font-weight: 700; font-size: 0.9rem; color: var(--text); margin-bottom: 3px; }
+.glos-def  { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+.glos-tag  { display: inline-block; font-size: 0.63rem; font-weight: 700; padding: 2px 7px; border-radius: 10px; background: #f3f4f6; color: #777; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+.glos-category {
+  font-size: 0.72rem; font-weight: 700; color: var(--muted); text-transform: uppercase;
+  letter-spacing: 1.2px; padding: 14px 20px 6px; background: #f8fafc;
+  border-bottom: 1px solid var(--border); border-top: 1px solid var(--border);
+  margin-top: 4px;
+}
+.glos-category:first-child { border-top: none; margin-top: 0; }
 
 /* ── LEADER BADGE ── */
 .leader { display: inline-flex; align-items: center; gap: 5px; font-size: 0.8rem; }
@@ -407,89 +422,88 @@ tbody tr.hidden { display: none; }
         <input type="text" id="glos-search" placeholder="🔍  Buscar término..." oninput="filterGlosario(this.value)"
           style="padding:9px 15px;border:1px solid var(--border);border-radius:10px;font-size:0.86rem;width:100%;max-width:360px;background:#fff;outline:none;">
       </div>
-      <div class="section-title" style="margin-bottom:14px;">Operaciones</div>
-      <div class="glos-grid" id="glos-grid">
-        <div class="glos-card">
-          <span class="glos-tag">Operaciones</span>
-          <div class="glos-term">Bancada de Packing</div>
-          <div class="glos-def">Puesto de trabajo donde los operarios preparan y empaquetan los pedidos para su despacho.</div>
+      <div class="panel" id="glos-grid">
+
+        <div class="glos-category">🏭 Operaciones</div>
+        <div class="glos-list">
+          <div class="glos-item"><div class="glos-accent yellow"></div><div class="glos-body">
+            <div class="glos-term">Bancada de Packing</div>
+            <div class="glos-def">Puesto de trabajo donde el operario arma y empaqueta los pedidos listos para despachar. Es la estación principal de preparación de órdenes.</div>
+          </div></div>
+          <div class="glos-item"><div class="glos-accent blue"></div><div class="glos-body">
+            <div class="glos-term">Bancada de Maquila</div>
+            <div class="glos-def">Puesto donde se realiza la transformación física de un producto SMART: se coloca la tarjeta dentro del packaging correspondiente antes de su despacho.</div>
+          </div></div>
+          <div class="glos-item"><div class="glos-accent green"></div><div class="glos-body">
+            <div class="glos-term">Bancada de Devoluciones</div>
+            <div class="glos-def">Puesto donde se recepciona, inspecciona y procesa la mercadería que el cliente devolvió o que no pudo ser entregada (entregas no efectivas).</div>
+          </div></div>
+          <div class="glos-item"><div class="glos-accent orange"></div><div class="glos-body">
+            <div class="glos-term">Rep (Representante)</div>
+            <div class="glos-def">Operario asignado a un turno dentro del depósito. Es quien ejecuta las tareas de packing, maquila, devoluciones u otras operaciones según su puesto.</div>
+          </div></div>
         </div>
-        <div class="glos-card blue">
-          <span class="glos-tag">Operaciones</span>
-          <div class="glos-term">Bancada de Maquila</div>
-          <div class="glos-def">Puesto destinado al proceso de maquila: transformación de un SMART colocando la tarjeta dentro del packaging correspondiente.</div>
+
+        <div class="glos-category">🚚 Logística</div>
+        <div class="glos-list">
+          <div class="glos-item"><div class="glos-accent yellow"></div><div class="glos-body">
+            <div class="glos-term">Ruta</div>
+            <div class="glos-def">Agrupación de pedidos organizada por carrier y tipo de producto. Cada ruta tiene su propio horario de corte y colectas asignadas.</div>
+          </div></div>
+          <div class="glos-item"><div class="glos-accent blue"></div><div class="glos-body">
+            <div class="glos-term">Horario de Corte</div>
+            <div class="glos-def">Hora límite hasta la cual se aceptan pedidos para incluirlos en la ruta del día. Los pedidos recibidos después de ese horario se despachan al día siguiente.</div>
+          </div></div>
+          <div class="glos-item"><div class="glos-accent green"></div><div class="glos-body">
+            <div class="glos-term">Colecta</div>
+            <div class="glos-def">Momento en que el carrier o transportista pasa por el depósito a retirar los paquetes preparados. Puede haber varias colectas por día según la ruta.</div>
+          </div></div>
+          <div class="glos-item"><div class="glos-accent purple"></div><div class="glos-body">
+            <div class="glos-term">Process Path</div>
+            <div class="glos-def">Clasificación de los pedidos según su volumetría y características. En MP operamos con tarjetas, identificación y otros productos categorizados por volumen. El CAP XD opera bajo esta lógica.</div>
+          </div></div>
         </div>
-        <div class="glos-card green">
-          <span class="glos-tag">Operaciones</span>
-          <div class="glos-term">Bancada de Devoluciones</div>
-          <div class="glos-def">Puesto donde se procesan las devoluciones y entregas no efectivas de los clientes.</div>
+
+        <div class="glos-category">⚡ Capacidad</div>
+        <div class="glos-list">
+          <div class="glos-item"><div class="glos-accent red"></div><div class="glos-body">
+            <div class="glos-term">CAP SELLER — Cap de la Jaula</div>
+            <div class="glos-def">Límite de capacidad a nivel de jaula/depósito. <strong>No bloquea la etiqueta</strong>: cuando se alcanza el tope, el sistema le otorga al vendedor una fecha pactada para el día siguiente o para cuando haya capacidad disponible. Ejemplo: MLA con cupo de 20k unidades.</div>
+          </div></div>
+          <div class="glos-item"><div class="glos-accent red"></div><div class="glos-body">
+            <div class="glos-term">CAP XD</div>
+            <div class="glos-def">Límite de capacidad que opera por process path. A diferencia del CAP Seller, <strong>sí bloquea la etiqueta</strong>: el vendedor no puede generar el envío hasta que haya capacidad disponible nuevamente.</div>
+          </div></div>
+          <div class="glos-item"><div class="glos-accent red"></div><div class="glos-body">
+            <div class="glos-term">CAP LAST MILE</div>
+            <div class="glos-def">Límite de capacidad de la última milla. Se activa cuando no hay camionetas disponibles para realizar el reparto. Impacta directamente en la cantidad de pedidos que pueden despacharse ese día.</div>
+          </div></div>
         </div>
-        <div class="glos-card orange">
-          <span class="glos-tag">Logística</span>
-          <div class="glos-term">Horario de Corte</div>
-          <div class="glos-def">Hora límite hasta la cual se aceptan pedidos para incluirlos en la ruta del día.</div>
+
+        <div class="glos-category">💻 Sistemas</div>
+        <div class="glos-list">
+          <div class="glos-item"><div class="glos-accent yellow"></div><div class="glos-body">
+            <div class="glos-term">WMS — Warehouse Management System</div>
+            <div class="glos-def">Sistema de gestión de almacenes. Controla el inventario, las ubicaciones y todas las operaciones del depósito en tiempo real.</div>
+          </div></div>
+          <div class="glos-item"><div class="glos-accent blue"></div><div class="glos-body">
+            <div class="glos-term">INVAS</div>
+            <div class="glos-def">Sistema interno de Mercado Pago para consultar el inventario y el stock disponible en el depósito. Se descarga diariamente para generar reportes.</div>
+          </div></div>
+          <div class="glos-item"><div class="glos-accent green"></div><div class="glos-body">
+            <div class="glos-term">PAY BE FORE</div>
+            <div class="glos-def">Nombre sistémico de la hora de corte. Es el tiempo máximo que el sistema le da al vendedor para preparar su pedido antes de la colecta. Se calcula como: <strong>Hora de colecta real − Processing Time = Pay Be Fore</strong>.</div>
+          </div></div>
+          <div class="glos-item"><div class="glos-accent orange"></div><div class="glos-body">
+            <div class="glos-term">Processing Time</div>
+            <div class="glos-def">Tiempo que tarda la operación en procesar un pedido desde que se recibe hasta que está listo para la colecta. Define cuánto antes del pick-up debe cerrarse el corte sistémico.</div>
+          </div></div>
+          <div class="glos-item"><div class="glos-accent purple"></div><div class="glos-body">
+            <div class="glos-term">SNT — Sellers Nodes Time</div>
+            <div class="glos-def">Configuración de promesas de entrega en la que cada vendedor funciona como un nodo independiente (sin depender de un place). En este modelo, la colecta siempre está fija a las 18:00 hs.</div>
+          </div></div>
         </div>
-        <div class="glos-card">
-          <span class="glos-tag">Logística</span>
-          <div class="glos-term">Colecta</div>
-          <div class="glos-def">Recolección de paquetes en el depósito por parte del transportista o carrier.</div>
-        </div>
-        <div class="glos-card blue">
-          <span class="glos-tag">Logística</span>
-          <div class="glos-term">Ruta</div>
-          <div class="glos-def">Nombre de las rutas separadas por carrier y productos para procesar.</div>
-        </div>
-        <div class="glos-card green">
-          <span class="glos-tag">Sistemas</span>
-          <div class="glos-term">WMS</div>
-          <div class="glos-def">Warehouse Management System. Sistema de gestión de almacenes que controla el inventario y las operaciones del depósito.</div>
-        </div>
-        <div class="glos-card">
-          <span class="glos-tag">Sistemas</span>
-          <div class="glos-term">INVAS</div>
-          <div class="glos-def">Sistema interno de inventario y stock de Mercado Pago.</div>
-        </div>
-        <div class="glos-card orange">
-          <span class="glos-tag">RRHH</span>
-          <div class="glos-term">Rep</div>
-          <div class="glos-def">Representante / operario que trabaja en el depósito en un turno determinado.</div>
-        </div>
-        <!-- Nuevos términos -->
-        <div class="glos-card red">
-          <span class="glos-tag">Capacidad</span>
-          <div class="glos-term">CAP SELLER (Cap de la Jaula)</div>
-          <div class="glos-def">No bloquea la etiqueta. Ejemplo: MLA 20k → me tira fecha pactada al día siguiente o cuando encuentre capacidad disponible.</div>
-        </div>
-        <div class="glos-card red">
-          <span class="glos-tag">Capacidad</span>
-          <div class="glos-term">CAP XD</div>
-          <div class="glos-def">Opera por process path. ME BLOQUEA la etiqueta cuando no hay capacidad.</div>
-        </div>
-        <div class="glos-card red">
-          <span class="glos-tag">Capacidad</span>
-          <div class="glos-term">CAP LAST MILE</div>
-          <div class="glos-def">No hay capacidad de camionetas disponibles para el despacho.</div>
-        </div>
-        <div class="glos-card purple">
-          <span class="glos-tag">Logística</span>
-          <div class="glos-term">Process Path</div>
-          <div class="glos-def">Categorización por volumetría. Las operaciones se dividen por process path: nosotros tenemos tarjetas, identificación y categorización por volumen.</div>
-        </div>
-        <div class="glos-card blue">
-          <span class="glos-tag">Sistemas</span>
-          <div class="glos-term">PAY BE FORE</div>
-          <div class="glos-def">Hora de corte sistémica. Es el nombre sistémico de la hora de corte. Fórmula: <strong>Hora colecta − Processing Time = Pay Be Fore</strong></div>
-        </div>
-        <div class="glos-card blue">
-          <span class="glos-tag">Sistemas</span>
-          <div class="glos-term">Processing Time</div>
-          <div class="glos-def">Es mi hora de corte sistémica hasta mi hora de colecta real.</div>
-        </div>
-        <div class="glos-card green">
-          <span class="glos-tag">Configuración</span>
-          <div class="glos-term">SNT (Sellers Nodes Time)</div>
-          <div class="glos-def">Configuración de promesas tomando a cada seller como un nodo. Se usa cuando no depende de un place. Tiene colecta fija a las 18:00 hs.</div>
-        </div>
+
       </div>
     </div><!-- /glosario -->
 
@@ -936,8 +950,14 @@ function globalSearch(val) {
 // ── GLOSARIO SEARCH ──
 function filterGlosario(val) {
   const q = val.toLowerCase();
-  document.querySelectorAll('#glos-grid .glos-card').forEach(c => {
+  document.querySelectorAll('#glos-grid .glos-item').forEach(c => {
     c.style.display = c.innerText.toLowerCase().includes(q) ? '' : 'none';
+  });
+  // ocultar categorías vacías
+  document.querySelectorAll('#glos-grid .glos-category').forEach(cat => {
+    const list = cat.nextElementSibling;
+    const visible = list && [...list.querySelectorAll('.glos-item')].some(i => i.style.display !== 'none');
+    cat.style.display = visible ? '' : 'none';
   });
 }
 
