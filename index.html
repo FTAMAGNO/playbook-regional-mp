@@ -1016,11 +1016,12 @@ const baseOpts = { responsive:true, maintainAspectRatio:false, plugins:{legend:{
 new Chart('chart-bancadas', {
   type:'bar',
   data:{
-    labels:['México','Argentina','Chile','Uruguay'],
+    labels:['Packing','Maquila','Devoluciones'],
     datasets:[
-      {label:'Packing',      data:[10,10,7,1], backgroundColor:COLORS.pack, borderRadius:5},
-      {label:'Maquila',      data:[4, 6, 4,1], backgroundColor:COLORS.maq,  borderRadius:5},
-      {label:'Devoluciones', data:[1, 4, 4,0], backgroundColor:COLORS.dev,  borderRadius:5},
+      {label:'México',    data:[10,4,1], backgroundColor:COLORS.mx, borderRadius:5},
+      {label:'Argentina', data:[10,6,4], backgroundColor:COLORS.ar, borderRadius:5},
+      {label:'Chile',     data:[7, 4,4], backgroundColor:COLORS.cl, borderRadius:5},
+      {label:'Uruguay',   data:[1, 1,0], backgroundColor:COLORS.uy, borderRadius:5},
     ]
   },
   options:{...baseOpts, plugins:{legend:{display:true,position:'bottom',labels:{font:{size:11},boxWidth:11}}}, scales:{x:{grid:{display:false}},y:{grid:{color:'#f3f4f6'},beginAtZero:true}}}
