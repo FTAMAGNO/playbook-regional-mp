@@ -1034,7 +1034,7 @@ new Chart('chart-reps', {
   type:'doughnut',
   data:{
     labels:['México (55)','Argentina (26)','Chile (16)','Uruguay (2)'],
-    datasets:[{data:[55,26,16,2], backgroundColor:[COLORS.mx,COLORS.ar,COLORS.cl,COLORS.uy], borderWidth:0, hoverOffset:6}]
+    datasets:[{data:[55,26,16,2], backgroundColor:['#006847','#f59e0b','#D52B1E','#8b5cf6'], borderWidth:0, hoverOffset:6}]
   },
   options:{...baseOpts, plugins:{legend:{display:true,position:'bottom',labels:{font:{size:11},boxWidth:11}}}, cutout:'60%'}
 });
