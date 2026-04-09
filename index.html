@@ -579,56 +579,32 @@ tbody tr.hidden { display: none; }
         </table>
       </div>
 
-      <!-- RUTAS MX -->
-      <div class="section-title" style="margin-bottom:10px;">Rutas</div>
+      <!-- RUTAS + COLECTAS MX unificado -->
+      <div class="section-title" style="margin-bottom:10px;">Rutas y Colectas</div>
       <div class="panel" style="margin-bottom:20px;">
-        <table>
-          <thead><tr><th>Nombre Ruta</th><th>Día pactado</th><th>Ventana de corte</th><th>Colectas</th><th>Frecuencia</th></tr></thead>
-          <tbody>
-            <tr><td rowspan="7" style="font-weight:700;vertical-align:top;padding-top:14px;">Débito Pactado Hoy<br><small style="font-weight:400;color:var(--muted);">CARDS XD 100%</small></td>
-              <td>Sábado</td><td>Vie 11:00 → Sáb 06:00</td><td>—</td><td rowspan="7" style="vertical-align:top;padding-top:14px;">—</td></tr>
-            <tr><td>Domingo</td><td>Sáb 06:00 → Dom 05:00 (corte sistémico)</td></tr>
-            <tr><td>Lunes</td><td>Dom 05:00 → Lun 11:00</td></tr>
-            <tr><td>Martes</td><td>Lun 11:00 → Mar 11:00</td></tr>
-            <tr><td>Miércoles</td><td>Mar 11:00 → Mié 11:00</td></tr>
-            <tr><td>Jueves</td><td>Mié 11:00 → Jue 11:00</td></tr>
-            <tr><td>Viernes</td><td>Jue 11:00 → Vie 11:00</td></tr>
-
-            <tr style="border-top:2px solid var(--border);">
-              <td rowspan="7" style="font-weight:700;vertical-align:top;padding-top:14px;">Monza Pactado Hoy<br><small style="font-weight:400;color:var(--muted);">CARDS XD 100%</small></td>
-              <td>Sábado</td><td>Vie 11:00 → Sáb 06:00</td><td>—</td><td rowspan="7" style="vertical-align:top;padding-top:14px;">—</td></tr>
-            <tr><td>Domingo</td><td>Sáb 06:00 → Dom 05:00 (corte sistémico)</td></tr>
-            <tr><td>Lunes</td><td>Dom 05:00 → Lun 11:00</td></tr>
-            <tr><td>Martes</td><td>Lun 11:00 → Mar 11:00</td></tr>
-            <tr><td>Miércoles</td><td>Mar 11:00 → Mié 11:00</td></tr>
-            <tr><td>Jueves</td><td>Mié 11:00 → Jue 11:00</td></tr>
-            <tr><td>Viernes</td><td>Jue 11:00 → Vie 11:00</td></tr>
-
-            <tr style="border-top:2px solid var(--border);">
-              <td style="font-weight:700;">Points Pactada Hoy</td>
-              <td colspan="2" style="color:var(--muted);font-style:italic;">⏳ Horarios de corte pendientes de carga</td>
-              <td>—</td><td>—</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- COLECTAS MX -->
-      <div class="section-title" style="margin-bottom:10px;">Horarios de Colecta Real</div>
-      <div class="panel" style="margin-bottom:20px;">
-        <div style="padding:10px 18px 4px; font-size:0.75rem; color:var(--muted);">
-          🔵 Colecta general &nbsp;|&nbsp; <span style="color:#8b5cf6;">🟣 Solo Points (4pm)</span>
+        <div style="padding:10px 18px 4px; font-size:0.74rem; color:var(--muted); border-bottom:1px solid var(--border);">
+          Débito y Monza comparten la misma ventana de corte (CARDS XD 100%) &nbsp;·&nbsp; <span style="color:#8b5cf6;font-weight:600;">🟣 Colecta 4 solo Points</span>
         </div>
         <table>
-          <thead><tr><th>Día</th><th>Colecta 1</th><th>Colecta 2</th><th>Colecta 3</th><th>Colecta 4</th></tr></thead>
+          <thead>
+            <tr>
+              <th>Día</th>
+              <th>Ventana de corte<br><span style="font-weight:400;font-size:0.7rem;color:#aaa;">Débito / Monza</span></th>
+              <th>Ventana de corte<br><span style="font-weight:400;font-size:0.7rem;color:#8b5cf6;">Points</span></th>
+              <th>Colecta 1</th>
+              <th>Colecta 2</th>
+              <th>Colecta 3</th>
+              <th>Colecta 4</th>
+            </tr>
+          </thead>
           <tbody>
-            <tr><td><strong>Domingo</strong></td><td>08:00</td><td>09:00</td><td>—</td><td>—</td></tr>
-            <tr><td><strong>Lunes</strong></td><td>08:00</td><td>11:30</td><td>14:00</td><td>—</td></tr>
-            <tr><td><strong>Martes</strong></td><td>08:00</td><td>11:30</td><td>14:00</td><td><span style="color:#8b5cf6;font-weight:700;">16:00 (Points)</span></td></tr>
-            <tr><td><strong>Miércoles</strong></td><td>08:00</td><td>11:30</td><td>14:00</td><td><span style="color:#8b5cf6;font-weight:700;">16:00 (Points)</span></td></tr>
-            <tr><td><strong>Jueves</strong></td><td>08:00</td><td>11:30</td><td>14:00</td><td><span style="color:#8b5cf6;font-weight:700;">16:00 (Points)</span></td></tr>
-            <tr><td><strong>Viernes</strong></td><td>08:00</td><td>11:30</td><td>14:00</td><td><span style="color:#8b5cf6;font-weight:700;">16:00 (Points)</span></td></tr>
-            <tr><td><strong>Sábado</strong></td><td>08:00</td><td>09:00</td><td>—</td><td>—</td></tr>
+            <tr><td><strong>Domingo</strong></td><td>Sáb 06:00 → Dom 05:00</td><td style="color:var(--muted);font-style:italic;">⏳ Pendiente</td><td>08:00</td><td>09:00</td><td>—</td><td>—</td></tr>
+            <tr><td><strong>Lunes</strong></td><td>Dom 05:00 → Lun 11:00</td><td style="color:var(--muted);font-style:italic;">⏳ Pendiente</td><td>08:00</td><td>11:30</td><td>14:00</td><td>—</td></tr>
+            <tr><td><strong>Martes</strong></td><td>Lun 11:00 → Mar 11:00</td><td style="color:var(--muted);font-style:italic;">⏳ Pendiente</td><td>08:00</td><td>11:30</td><td>14:00</td><td><span style="color:#8b5cf6;font-weight:700;">16:00 (Points)</span></td></tr>
+            <tr><td><strong>Miércoles</strong></td><td>Mar 11:00 → Mié 11:00</td><td style="color:var(--muted);font-style:italic;">⏳ Pendiente</td><td>08:00</td><td>11:30</td><td>14:00</td><td><span style="color:#8b5cf6;font-weight:700;">16:00 (Points)</span></td></tr>
+            <tr><td><strong>Jueves</strong></td><td>Mié 11:00 → Jue 11:00</td><td style="color:var(--muted);font-style:italic;">⏳ Pendiente</td><td>08:00</td><td>11:30</td><td>14:00</td><td><span style="color:#8b5cf6;font-weight:700;">16:00 (Points)</span></td></tr>
+            <tr><td><strong>Viernes</strong></td><td>Jue 11:00 → Vie 11:00</td><td style="color:var(--muted);font-style:italic;">⏳ Pendiente</td><td>08:00</td><td>11:30</td><td>14:00</td><td><span style="color:#8b5cf6;font-weight:700;">16:00 (Points)</span></td></tr>
+            <tr><td><strong>Sábado</strong></td><td>Vie 11:00 → Sáb 06:00</td><td style="color:var(--muted);font-style:italic;">⏳ Pendiente</td><td>08:00</td><td>09:00</td><td>—</td><td>—</td></tr>
           </tbody>
         </table>
       </div>
