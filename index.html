@@ -569,11 +569,32 @@ tbody tr.hidden { display: none; }
       <div class="section-title" style="margin-bottom:10px;">Rutas</div>
       <div class="panel" style="margin-bottom:20px;">
         <table>
-          <thead><tr><th>Nombre Ruta</th><th>Horario Corte</th><th>Colectas</th><th>Frecuencia</th></tr></thead>
+          <thead><tr><th>Nombre Ruta</th><th>Día pactado</th><th>Ventana de corte</th><th>Colectas</th><th>Frecuencia</th></tr></thead>
           <tbody>
-            <tr><td><strong>Débito Pactado Hoy</strong></td><td>—</td><td>—</td><td>—</td></tr>
-            <tr><td><strong>Monza Pactado Hoy</strong></td><td>—</td><td>—</td><td>—</td></tr>
-            <tr><td><strong>Points Pactada Hoy</strong></td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td rowspan="7" style="font-weight:700;vertical-align:top;padding-top:14px;">Débito Pactado Hoy<br><small style="font-weight:400;color:var(--muted);">CARDS XD 100%</small></td>
+              <td>Sábado</td><td>Vie 11:00 → Sáb 06:00</td><td>—</td><td rowspan="7" style="vertical-align:top;padding-top:14px;">—</td></tr>
+            <tr><td>Domingo</td><td>Sáb 06:00 → Dom 05:00 (corte sistémico)</td></tr>
+            <tr><td>Lunes</td><td>Dom 05:00 → Lun 11:00</td></tr>
+            <tr><td>Martes</td><td>Lun 11:00 → Mar 11:00</td></tr>
+            <tr><td>Miércoles</td><td>Mar 11:00 → Mié 11:00</td></tr>
+            <tr><td>Jueves</td><td>Mié 11:00 → Jue 11:00</td></tr>
+            <tr><td>Viernes</td><td>Jue 11:00 → Vie 11:00</td></tr>
+
+            <tr style="border-top:2px solid var(--border);">
+              <td rowspan="7" style="font-weight:700;vertical-align:top;padding-top:14px;">Monza Pactado Hoy<br><small style="font-weight:400;color:var(--muted);">CARDS XD 100%</small></td>
+              <td>Sábado</td><td>Vie 11:00 → Sáb 06:00</td><td>—</td><td rowspan="7" style="vertical-align:top;padding-top:14px;">—</td></tr>
+            <tr><td>Domingo</td><td>Sáb 06:00 → Dom 05:00 (corte sistémico)</td></tr>
+            <tr><td>Lunes</td><td>Dom 05:00 → Lun 11:00</td></tr>
+            <tr><td>Martes</td><td>Lun 11:00 → Mar 11:00</td></tr>
+            <tr><td>Miércoles</td><td>Mar 11:00 → Mié 11:00</td></tr>
+            <tr><td>Jueves</td><td>Mié 11:00 → Jue 11:00</td></tr>
+            <tr><td>Viernes</td><td>Jue 11:00 → Vie 11:00</td></tr>
+
+            <tr style="border-top:2px solid var(--border);">
+              <td style="font-weight:700;">Points Pactada Hoy</td>
+              <td colspan="2" style="color:var(--muted);font-style:italic;">⏳ Horarios de corte pendientes de carga</td>
+              <td>—</td><td>—</td>
+            </tr>
           </tbody>
         </table>
       </div>
